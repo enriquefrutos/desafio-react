@@ -2,17 +2,38 @@ import Cartwidget from "./CartWidget";
 
 const  NavBar = () => {
     return (
-      <nav>
-      <ul id="menu">
-          <li><a href="index.html">INICIO</a></li>
-          <li><a href="PELICULAS.html">PELICULAS</a></li>
-          <li><a href="TRAILERS.HTML">TRAILERS</a></li>
-          <li><a href="https://www.ticketek.com.ar/">ENTRADAS</a></li>
-          <li><a href="quienesomos.html">QUIENES SOMOS</a></li>
-          <li><a href="#contacto">CONTACTO</a></li>
-          <li>TIENDA CINE</li>
-          <Cartwidget />
+      <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Caracteristicas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lista de productos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
       </ul>
+    </div>
+  </div>
+
+          <Cartwidget />
   </nav>
     );
   }
