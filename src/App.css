@@ -14,3 +14,10 @@
   width: 40px;
   
 }
+
+p{
+  display: flex;
+}
+p img {
+  width: 150px;
+}
