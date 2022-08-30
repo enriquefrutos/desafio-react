@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ItemCount = (props) => {
-    const[rate, setRate] = useState(1);
+    const[rate, setRate] = useState(0);
 
   
 
