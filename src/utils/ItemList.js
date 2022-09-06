@@ -21,7 +21,9 @@ export const item = [
         price: 13000,
         stock: 20,
         image: 'https://fraguru.com/mdimg/perfume/375x500.18471.jpg',
-        category: 'Perfumes'
+        category: 'Perfumes',
+        description: 'La nueva fragancia de Paco Rabanne, para el caballero'
+
     },
     {
         id:4,
