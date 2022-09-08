@@ -15,9 +15,7 @@
   
 }
 
-p{
-  display: flex;
-}
-p img {
+img {
   width: 150px;
+  display: flex;
 }
