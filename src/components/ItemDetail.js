@@ -1,15 +1,17 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ItemCount from './ItemCount';
-import { useState } from "react";
-import {Link} from 'react-router-dom';
+import { useState, useContext } from "react";
+import {CartContext} from './CartContext';
+
 
 const ItemDetail = ({itemn}) => {
   const [itemCount, setItemCount] =useState(0)
+  const test = useContext(CartContext);
 
   const onAdd = (qty) => {
     setItemCount(qty);
+    test.addItem(itemn,qty);
   } 
   return (
     <>
@@ -21,13 +23,8 @@ const ItemDetail = ({itemn}) => {
       <Card.Text>
        {itemn.description}<br></br>
        Precio:{itemn.price}
-       <ItemCount/>
+       <ItemCount stock={itemn.stock} onClick = {onAdd} initial ={itemCount}/>
       </Card.Text>
-      {
-        itemCount === 0 ?
-      <Button variant="primary" onClick = {onAdd}>Comprar</Button>
-      : <Link to='/cart'><Button>Checkout</Button></Link>
-}
     </Card.Body>
   </Card>
     }

@@ -26,7 +26,6 @@ const ItemListContainer = () => {
             
             (<><h4>{item.name}</h4>
             <Link to={`/item/${item.id}`}><img src={item.image} alt=''/></Link> 
-            <ItemCount />
             </>
             ))
     }
