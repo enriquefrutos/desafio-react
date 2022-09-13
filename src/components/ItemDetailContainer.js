@@ -5,6 +5,7 @@ import desafio from './Item';
 import { useParams } from 'react-router-dom';
 
 
+
 const ItemDetailContainer = () => {
     const[detalle, setDetalle] = useState({});
     const {id} = useParams();

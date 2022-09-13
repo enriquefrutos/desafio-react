@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState} from "react";
 
-const ItemCount = (props) => {
+
+
+
+const ItemCount = ({}) => {
     const[rate, setRate] = useState(0);
+ 
 
-  
 
     const subir = () =>{ 
         if
