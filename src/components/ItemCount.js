@@ -1,40 +1,44 @@
-import { useState, useEffect} from "react";
-import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom';
+
+import { useEffect, useState } from "react";
 
 
 
+const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
+    const [count, setCount] =useState(0);
 
-const ItemCount = ({stock, onAdd,initial}) => {
-    const[rate, setRate] = useState(0);
- 
- useEffect(()=>{
-     setRate(initial)
- },[]);
+    useEffect(() => {
+        setCount(initial);
+    },[]);
 
-    const subir = () =>{ 
-        if
-        (rate < stock) {  
-        setRate(rate+1)}
-    }
-    const bajar = () => {
-        if
-        (rate > 0) {  
-        setRate(rate-1)}
+    const increment = () => {
+        if (count < stock) {
+            setCount(count + 1);
+        }
     }
 
+    const decrement = () => {
+        if (count > initial) {
+            setCount(count - 1);
+        }
+    }
 
-   return(
-    <div>
-        <h6>CANTIDAD DE PRODUCTOS</h6>
-        <button onClick={subir}>+</button>{rate}
-        <button onClick={bajar}>-</button>
-        {
-                rate === 0 
-                ? <Button variant="primary" onClick = {() => onAdd(rate)}>Comprar</Button>
-                : <Link to='/cart'><Button>Checkout</Button></Link>
-            }
-    </div>
-   ) 
+    return (
+        <div>
+            
+            <div class="agregar">
+                <button class="btn btn-secondary btn-sm" onClick={decrement}>-</button>
+                {" Cant: "}{count}{"  Unid. "}
+                <button class="btn btn-secondary btn-sm" onClick={increment}>+</button>
+            <br /><br />
+                {
+                    count
+                    ? <button class="btn btn-outline-dark btn-sm" onClick={() => onAdd(count)}>Agregar al Carrito</button>
+                    : <button class="btn btn-outline-dark btn-sm" disabled>Agregar al Carrito</button>
+                    
+                }
+            </div>
+
+        </div>
+    )
 }
 export default ItemCount;

@@ -15,7 +15,32 @@
   
 }
 
-img {
+.imagenes {
   width: 150px;
   display: flex;
+  justify-content: center;
+  float: left;
+
+}
+
+.contenedor h4{
+  justify-content: center;
+  align-items: center;
+}
+body{
+  flex-wrap: wrap;
+}
+
+.contenedor{
+  float: left;
+  overflow: hidden;
+  padding-top: 15px;
+  padding: 25px;
+  padding-left: 50;
+}
+.img{
+  width: 200px;
+}
+.imgcart{
+  width: 150px;
 }

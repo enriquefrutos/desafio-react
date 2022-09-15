@@ -24,8 +24,11 @@ const ItemListContainer = () => {
     {
         productos.map(item => 
             
-            (<><h4>{item.name}</h4>
-            <Link to={`/item/${item.id}`}><img src={item.image} alt=''/></Link> 
+            (<>
+            <div class='contenedor'>
+            <h4>{item.name}</h4>
+            <Link to={`/item/${item.id}`}><img src={item.image} alt='' class='imagenes'/></Link> 
+            </div>
             </>
             ))
     }

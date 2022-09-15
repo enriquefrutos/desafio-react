@@ -59,6 +59,16 @@ export const products= [
         category: 'Perfumes',
         categoryId: 3,
         description: 'El perfume de siempre para los niños'
+    },
+    {
+        id:7,
+        name: 'Pibes',
+        price: 10500,
+        stock: 5,
+        image: 'https://pedidosfarma.vteximg.com.br/arquivos/ids/171142-300-300/Pibes-Perfume-Ninos-Edc-80-Ml.jpg?v=637311258539500000',
+        category: 'Perfumes',
+        categoryId: 3,
+        description: 'El que todo niño quiere'
     }
 
 ]

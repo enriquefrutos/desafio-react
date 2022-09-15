@@ -13,9 +13,9 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         desafio(products.find(item => item.id == id))
         .then(result => setDetalle(result))
-    },[]);
+    },[id]);
   return (
-    <ItemDetail itemn ={detalle}/>
+    <ItemDetail item ={detalle}/>
   );
 }
 

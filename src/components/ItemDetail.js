@@ -1,35 +1,57 @@
-import React from 'react'
+import ItemCount from "./ItemCount";
+import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { CartContext } from "./CartContext";
 import Card from 'react-bootstrap/Card';
-import ItemCount from './ItemCount';
-import { useState, useContext } from "react";
-import {CartContext} from './CartContext';
 
+const ItemDetail = ({ item }) => {
 
-const ItemDetail = ({itemn}) => {
-  const [itemCount, setItemCount] =useState(0)
+  const [itemCount, setItemCount] = useState(0);
   const test = useContext(CartContext);
 
-  const onAdd = (qty) => {
-    setItemCount(qty);
-    test.addItem(itemn,qty);
-  } 
-  return (
-    <>
-    {   
-    <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src= {itemn.image} />
-    <Card.Body>
-      <Card.Title>{itemn.name}</Card.Title>
-      <Card.Text>
-       {itemn.description}<br></br>
-       Precio:{itemn.price}
-       <ItemCount stock={itemn.stock} onClick = {onAdd} initial ={itemCount}/>
-      </Card.Text>
-    </Card.Body>
-  </Card>
-    }
-    </>
-  )
+    const onAdd = (qty) => {
+      alert ("You have selected " + qty + " items.");
+      setItemCount(qty);
+      test.addItem(item, qty);
 }
 
-export default ItemDetail
+    return (
+      <> 
+      <main class="containerDetail">
+        <div class="cardDetail">
+          
+                <div class="flex-item">
+                  <p class="name"> {item.nombre}</p>
+                  <img class="img" src={item.image} alt=""/>
+                </div>
+                  
+                <div class="flex-item">
+                  <hr />
+                  <h2>{item.name}</h2>
+                  <p class="desc">Categoría : {item.category}</p>
+                  <p class="desc">Stock Disponible = {item.stock}</p>
+                  <p class="precio">Precio = {item.price} pesos</p> 
+                  <hr />                
+                  
+                  {
+                        itemCount === 0
+                      
+                        ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
+                        : <Link to='/cart'><button class="btn btn-outline-primary btn-sm">CheckOut</button></Link>
+                    }
+                    <hr />
+                </div>
+        </div>
+      </main>
+                   
+      
+
+
+
+
+      </>
+      )
+    
+  }
+
+  export default ItemDetail;
