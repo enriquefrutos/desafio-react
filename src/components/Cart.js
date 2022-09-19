@@ -31,6 +31,12 @@ const Cart = () => {
                 )
             
                 }</div>
+
+                <div>
+                    TOTAL COMPRA: {test.totalcomp()}
+                </div>
+
+
                 <div class="flex-item">
 
                 <button class="btn btn-outline-danger btn-sm" onClick={test.clear}>Eliminar todos los productos</button>
