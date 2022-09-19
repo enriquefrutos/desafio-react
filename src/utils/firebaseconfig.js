@@ -23,7 +23,7 @@ export const firestoreFetch = async (idCategory) =>
 {  
     let q;
     if(idCategory){
-        q = query(collection(db, 'products'), where('categoryId','==', idCategory));
+        q = query(collection(db, "products"), where("categoryId","==", idCategory));
     }else{
         q = query(collection(db, 'products'));
     }
@@ -34,8 +34,8 @@ export const firestoreFetch = async (idCategory) =>
     }))
   return dataFromFirestore
 }
-export const firestoreOneFetch = async (item) => {
-  const docRef = doc(db, "products", item);
+export const firestoreOneFetch = async (category) => {
+  const docRef = doc(db, "products", category);
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
     return {id: docSnap.id, ...docSnap.data()};
